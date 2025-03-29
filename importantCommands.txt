@@ -1,0 +1,7 @@
+Compile a C++ program on Mac use:
+ - clang++ bikeracemain.cpp -o bikeracemain //This for the c++98 version
+ - clang++ -std=c++17 bikeracemain.cpp -o bikeracemain
+
+On C, use the command:
+ - clang -g -o program_name program_name.c
+
