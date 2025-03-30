@@ -13,6 +13,7 @@ class Race{
         Race(int distance, float cost, float percentage, float totalSales);
         //Destructor
         ~Race();
+        
         //Setters
         int setRaceDistance(int distance);
         float setCostOfRace(float cost);
