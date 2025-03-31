@@ -26,5 +26,10 @@ Using CMake and how to compile with it
         - cmake ..
         - make
 
+    * For more commands and help with CMake, use this documentation: https://cliutils.gitlab.io/modern-cmake/chapters/intro/installing.html
+        - Simple and straight foward dialoge.
+        - For more formal and offical documenation use: https://cmake.org/cmake/help/latest/guide/tutorial/index.html
+
+
 
 
