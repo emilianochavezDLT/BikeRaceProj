@@ -2,12 +2,11 @@
 #include <iostream>
 #include "includes/organization/organization.h"
 #include "includes/race/race.h"
+#include "includes/validationFunctions/checkingUserInput.h"
+#include "includes/validationFunctions/validateUserDecision.h"
 #include <string>
 #include <array>
 using namespace std;
-
-bool checkingUserInput(string userInputString);
-bool validateUserDecision(array <string, 6>& arrString, string userInput);
 
 
 int main(){
@@ -65,45 +64,3 @@ int main(){
 
         
 }
-
-//This is a function that will validate the size of the string.
-//In this highly specialized function, we only want to have our string to be one char.
-bool checkingUserInput(string userInputString){
-    bool userSizeValid = false;
-    int userInputStringSize = 0;
-    userInputStringSize = userInputString.size(); //Grabbing the size of the User Input string
-
-    //We want the string to only be one character
-    if(userInputStringSize == 1){
-        userSizeValid = true; //Validate to true if the userInput was only one character
-    } 
-    //It was too long and try again.
-    else{
-        cout << "Try Again" << endl;
-    }
-
-    //Return True or False
-    return userSizeValid;
-
-}
-
-//This function is highly specialized, and we only want the userInput to match
-//the chars in the array string that we intilized in the main function. 
-bool validateUserDecision(array <string, 6>& arrString, string userInput){
-    bool userDecision = false;
-    //This for loop will only loop 6 times. 
-    for(int i = 0; i < 6; i++){
-        //Now, if our userInput character matches a char in the arrString
-        if(userInput == arrString[i]){
-            //Then the string is valid and will set the UserDecision to True
-            //We just need the loop to match at least once. 
-            userDecision = true;
-        }
-        //We don't need an else because the default of our return is false
-        //If we don't get a match then we will handle it in our main function.
-    }
-    
-    return userDecision;
-}
-
-

@@ -1,4 +1,4 @@
-#include "includes/organization/organization.h"
+#include "../includes/organization/organization.h"
 #include <iostream>
 using namespace std;
 
@@ -13,11 +13,11 @@ Organization::~Organization(){
 }
 
 //Setter Functions and they are pretty self explanatory
-string Organization::setOrgranizationName(string name){
+void Organization::setOrgranizationName(string name){
     organName = name;
 }
 
-string Organization::setDescription(string desc){
+void Organization::setDescription(string desc){
     description = desc;
 }
 

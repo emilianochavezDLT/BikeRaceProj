@@ -15,10 +15,10 @@ class Race{
         ~Race();
         
         //Setters
-        int setRaceDistance(int distance);
-        float setCostOfRace(float cost);
-        float setCharityPercentage(float percentage);
-        float setTotalRaceSales(float totalSales);
+        void setRaceDistance(int distance);
+        void setCostOfRace(float cost);
+        void setCharityPercentage(float percentage);
+        void setTotalRaceSales(float totalSales);
 
         //Getters
         int getRaceDistance();

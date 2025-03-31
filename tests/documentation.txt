@@ -1,0 +1,4 @@
+To find offical documentation on GoogleTest.
+    - https://google.github.io/googletest/
+    - the link above is where you should go to for help.
+

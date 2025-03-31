@@ -14,9 +14,9 @@ class Organization{
         ~Organization();
 
         //Getters and Setters
-        std::string setOrgranizationName(std::string name);
+        void setOrgranizationName(std::string name);
         std::string getOrgranizationName();
-        std::string setDescription(std::string desc);
+        void setDescription(std::string desc);
         std::string getDescription(); 
 };
 

@@ -1,7 +1,30 @@
 Compile a C++ program on Mac use:
- - clang++ bikeracemain.cpp -o bikeracemain //This for the c++98 version
- - clang++ -std=c++17 bikeracemain.cpp -o bikeracemain
+    - clang++ bikeracemain.cpp -o bikeracemain //This for the c++98 version
+    - clang++ -std=c++17 bikeracemain.cpp -o bikeracemain
 
 On C, use the command:
- - clang -g -o program_name program_name.c
+    - clang -g -o program_name program_name.c
+
+Using CMake and how to compile with it
+    1. To compile the project and it's file use this series of command.
+        - mkdir build    NOTE: If you already have a build directory don't make one. If you then do make one.
+        - cd build 
+        - cmake ..
+        - make 
+    
+    2. If you need to recompile the project because you make changes
+       or added new files, then you are going to add the new files on the 
+       CMakeList.txt file, and then recomplie the project cleanly.
+
+       !Make sure you add the files on you CMakeList.txt. 
+       I already made the mistake on not adding them and it took me a while
+       to fix it.
+
+       Here's how you do the recompile:
+        = cd build
+        - rm -rf *
+        - cmake ..
+        - make
+
+
 

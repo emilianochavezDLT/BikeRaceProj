@@ -1,4 +1,4 @@
-#include "includes/race/race.h"
+#include "../includes/race/race.h"
 #include <iostream>
 
 using namespace std;
@@ -16,19 +16,19 @@ Race::~Race(){
 }
 
 //Setter Functions
-int Race::setRaceDistance(int distance){
+void Race::setRaceDistance(int distance){
     raceDistance = distance;
 }
 
-float Race::setCostOfRace(float cost){
+void Race::setCostOfRace(float cost){
     costOfRace = cost;
 }
 
-float Race::setCharityPercentage(float percentage){
+void Race::setCharityPercentage(float percentage){
     chairtyPercentage = percentage;
 }
 
-float Race::setTotalRaceSales(float totalSales){
+void Race::setTotalRaceSales(float totalSales){
     totalRaceSales = totalSales;
 }
 
