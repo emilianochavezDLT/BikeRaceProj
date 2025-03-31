@@ -1,9 +1,9 @@
 //Program Created by: Emiliano Chavez De La Torre
 #include <iostream>
-#include "includes/organization/organization.h"
-#include "includes/race/race.h"
-#include "includes/validationFunctions/checkingUserInput.h"
-#include "includes/validationFunctions/validateUserDecision.h"
+#include "organization/organization.h"
+#include "race/race.h"
+#include "validationFunctions/checkingUserInput.h"
+#include "validationFunctions/validateUserDecision.h"
 #include <string>
 #include <array>
 using namespace std;

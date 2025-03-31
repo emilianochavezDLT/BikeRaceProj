@@ -1,4 +1,4 @@
-#include "../includes/validationFunctions/validateUserDecision.h"
+#include "validationFunctions/validateUserDecision.h"
 using namespace std;
 
 //This function is highly specialized, and we only want the userInput to match

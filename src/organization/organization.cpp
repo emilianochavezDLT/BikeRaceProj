@@ -1,4 +1,4 @@
-#include "../includes/organization/organization.h"
+#include "organization/organization.h"
 #include <iostream>
 using namespace std;
 

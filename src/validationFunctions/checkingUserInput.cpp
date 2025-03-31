@@ -1,4 +1,4 @@
-#include "../includes/validationFunctions/checkingUserInput.h"
+#include "validationFunctions/checkingUserInput.h"
 using namespace std;
 
 //This is a function that will validate the size of the string.

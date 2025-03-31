@@ -13,29 +13,40 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 #Setting an Environment Variable for my Includes Directory
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/includes")
 
-#Adding the Main Exectables of the project
-#Notice that the name bikerace. We will use it again.
-#Also this is what our program will be called. So its bikerace.exe
-add_executable(bikerace 
+#Creating a library for all of my source files and calling bikerace_lib, so that main
+#executable and the testing executables can use them together.
+#Keep on adding when you make header and src files.
+add_library(bikerace_lib
     src/organization/organization.cpp 
     src/race/race.cpp 
     src/validationFunctions/checkingUserInput.cpp
     src/validationFunctions/validateUserDecision.cpp
+)
+
+
+#Adding the Main Exectables of the project
+#Notice that the name bikerace. We will use it again.
+#Also this is what our program will be called. So its bikerace.exe
+add_executable(bikerace 
     bikeracemain.cpp
 )
 
 #This specifies the directories of my header files
-#Notice the name bikerace and how we used in our add_executable function on top.
-target_include_directories(bikerace PRIVATE
+#Notice the name bikerace and how we the used the name bikerace_lib specifed on add_library.
+target_include_directories(bikerace_lib PUBLIC
     ${INCLUDE_DIR}
 )
+
+#This function links the main executable with libraires specifed above.
+target_link_libraries(bikerace PUBLIC bikerace_lib)
+
 
 #---------------------#
 #   Testing Setup     #
 #---------------------#
 
 #Since I installed it locally, I need to put this line in.
-find_package(GTest Required)
+find_package(GTest REQUIRED)
 
 
 #--------------#
@@ -61,7 +72,7 @@ add_executable(runUnitTests ${UNIT_TEST_SOURCES})
 target_link_libraries(runUnitTests 
     GTest::gtest 
     GTest::gtest_main 
-    bikerace
+    bikerace_lib
 )
 
 
@@ -79,16 +90,24 @@ target_link_libraries(runUnitTests
 
 
 #
-#target_link_libraries(runIntegrationTests GTest::gtest GTest::gtest_main bikerace)
+#target_link_libraries(runIntegrationTests GTest::gtest GTest::gtest_main bikerace_lib)
 #
 #
 #
 
-#
-#include(CTest)
+
+
+# This allows us to use the Ctest framework, which makes it eaiser for us
+include(CTest)
+
+# See the two commnds bellow. So, the purpose of add_test function 
+# is to allow CTest to run our test. For example the first add_test
+# allows us to run the CTest command with UnitTests. "ctest -R UnitTests"
+# The command part of the add_test function tells CTest to run the executable
+# that we created here "add_executable(runUnitTests ${UNIT_TEST_SOURCES})" line 54. 
 
 # Add unit tests to CTest
-#add_test(NAME UnitTests COMMAND runUnitTests)
+add_test(NAME UnitTests COMMAND runUnitTests)
 
 # Add integration tests to CTest
 #add_test(NAME IntegrationTests COMMAND runIntegrationTests)

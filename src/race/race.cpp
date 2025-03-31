@@ -1,4 +1,4 @@
-#include "../includes/race/race.h"
+#include "race/race.h"
 #include <iostream>
 
 using namespace std;
