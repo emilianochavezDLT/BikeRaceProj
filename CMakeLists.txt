@@ -11,6 +11,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
 #Setting an Environment Variable for my Includes Directory
+#The cool part of this, is that when are creating the src files for the headers,
+#we no longer need the full path to be specifed in the src files or even in the main program.
+#For example, we just need "organization/organization.cpp" in our src files from now on instead of 
+#"../includes/organization/organization.cpp"
 set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/includes")
 
 #Creating a library for all of my source files and calling bikerace_lib, so that main
