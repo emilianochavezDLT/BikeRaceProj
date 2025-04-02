@@ -11,6 +11,7 @@ class Race{
 
         //Constructor
         Race(int distance, float cost, float percentage, float totalSales);
+        Race();
         //Destructor
         ~Race();
         

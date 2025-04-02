@@ -3,13 +3,15 @@
 
 using namespace std;
 
-//Creating ghe constructor first and initalizing it
+//Creating the constructor first and initalizing it
 Race::Race(int distance, float cost, float percentage, float totalSales){
     raceDistance = distance;
     costOfRace = cost;
     chairtyPercentage = percentage;
     totalRaceSales = totalSales;
 }
+
+Race::Race(){}
 
 //Destructor
 Race::~Race(){
