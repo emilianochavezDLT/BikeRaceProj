@@ -2,3 +2,33 @@ To find offical documentation on GoogleTest.
     - https://google.github.io/googletest/
     - the link above is where you should go to for help.
 
+For Tourtials on GTest Use:
+    - https://www.tutorialspoint.com/gtest/gtest-assertions.htm
+
+
+Example of Test and Running Commands Indvidually
+    
+    Code:
+        #include "gtest/gtest.h"
+        #include "race/race.h"
+
+        TEST(RaceTest, StartRace) {
+            // ...
+        }
+
+        TEST(RaceTest, FinishRace) {
+            // ...
+        }
+
+        TEST(AnotherRaceTest, CheckDistance) {
+            // ...
+        }
+
+    Commands on how to run the following Tests using CTest
+        * You can also run the executable as well if using gtest_filter like so:
+         - ./name_of_exe --gtest_filter="TestSuite.NameOfTest"
+
+        * If you just want to run all of the tests then you can 
+            - ctest
+                OR
+            - ./name_of_exe

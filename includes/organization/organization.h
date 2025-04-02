@@ -1,5 +1,5 @@
-#ifndef ORGRANIZATION_H
-#define ORGRANIZATION_H
+#ifndef ORGANIZATION_H
+#define ORGANIZATION_H
 #include <iostream>
 
 class Organization{
@@ -9,6 +9,7 @@ class Organization{
 
         //Constructors
         Organization(std::string name, std::string desc);
+        Organization();
 
         //Destructor
         ~Organization();
@@ -20,4 +21,4 @@ class Organization{
         std::string getDescription(); 
 };
 
-#endif
+#endif // ORGANIZATION_H

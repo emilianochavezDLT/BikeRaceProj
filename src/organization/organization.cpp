@@ -8,6 +8,9 @@ Organization::Organization(std::string name, std::string desc){
     description = desc;
 }
 
+//Another Constructor
+Organization::Organization(){}
+
 //Destructor
 Organization::~Organization(){
 }
