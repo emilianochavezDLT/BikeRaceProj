@@ -14,10 +14,10 @@ TEST(RaceTest1, ConstructorTest){
     float race_sales = 0;
 
 
-    race_dist = race::race1.get_race_distance();
-    race_cost = race::race1.get_cost_of_race();
-    race_percentage = race::race1.get_charity_percentage();
-    race_sales = race::race1.get_total_race_sales();
+    race_dist = race1.get_race_distance();
+    race_cost = race1.get_cost_of_race();
+    race_percentage = race1.get_charity_percentage();
+    race_sales = race1.get_total_race_sales();
 
     //Expecting those values to be true
     EXPECT_EQ(race_dist, 25);
@@ -41,15 +41,15 @@ TEST(RaceTest2, DefaultConstructor){
     race_percentage2 = 15.00;
     race_sales2 = 200.00;
 
-    race::race2.set_race_distance(race_dist2);
-    race::race2.set_cost_of_race(race_cost2);
-    race::race2.set_charity_percentage(race_percentage2);
-    race::race2.set_total_race_sales(race_sales2);
+    race2.set_race_distance(race_dist2);
+    race2.set_cost_of_race(race_cost2);
+    race2.set_charity_percentage(race_percentage2);
+    race2.set_total_race_sales(race_sales2);
 
     //Expects
-    EXPECT_EQ(race::race2.get_race_distance(), 50);
-    EXPECT_EQ(race::race2.get_cost_of_race(), 100.00);
-    EXPECT_EQ(race::race2.get_charity_percentage(), 15.00);
-    EXPECT_EQ(race::race2.get_total_race_sales(), 200.00);
+    EXPECT_EQ(race2.get_race_distance(), 50);
+    EXPECT_EQ(race2.get_cost_of_race(), 100.00);
+    EXPECT_EQ(race2.get_charity_percentage(), 15.00);
+    EXPECT_EQ(race2.get_total_race_sales(), 200.00);
     
 }

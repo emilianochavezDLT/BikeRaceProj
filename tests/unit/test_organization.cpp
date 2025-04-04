@@ -11,8 +11,8 @@ TEST(OrganizationTest, SettingNameForOrganization){
     organization::Organization new_org("The Pandas", "We race for bamboos");
 
     //Testing our get function to see if it fetches the name and desc
-    std::string organ_name = organization::new_org.get_organization_name();
-    std::string organ_desc = organization::newOrg.get_description();
+    std::string organ_name = new_org.get_organization_name();
+    std::string organ_desc = new_org.get_description();
 
     //Checking if it does return our name and desc
     EXPECT_EQ(organ_name, "The Pandas");
@@ -29,11 +29,11 @@ TEST(OrganizationTest, SettingFunctionsInOrganization){
     std::string organ_name2 = "Jaguars";
     std::string organ_desc2 = "Climbing Trees";
 
-    organization::new_org_2.setOrgranizationName(organ_name2);
-    organization::new_org_2.setDescription(organ_desc2);
+    new_org_2.set_organization_name(organ_name2);
+    new_org_2.set_description(organ_desc2);
 
-    EXPECT_EQ(organization::new_org_2.get_organization_name(), "Jaguars");
-    EXPECT_EQ(organization::new_org_2.get_description(), "Climbing Trees");
+    EXPECT_EQ(new_org_2.get_organization_name(), "Jaguars");
+    EXPECT_EQ(new_org_2.get_description(), "Climbing Trees");
         
 
 }
