@@ -1,55 +1,55 @@
 #include "race/race.h"
 #include "gtest/gtest.h"
-using namespace std;
+
 
 TEST(RaceTest1, ConstructorTest){
     //Creating an Instance of a Race Object
-    //raceDistance, cost, percentage, totalSales
-    Race race1(25, 50.00, 10.0, 500);
+    //race_distance, cost, percentage, totalSales
+    race::Race race1(25, 50.00, 10.0, 500);
 
     //Getting those distances using our get functions
-    int raceDist = 0;
-    float raceCost = 0;
-    float racePercentage = 0;
-    float raceSales = 0;
+    int race_dist = 0;
+    float race_cost = 0;
+    float race_percentage = 0;
+    float race_sales = 0;
 
 
-    raceDist = race1.getRaceDistance();
-    raceCost = race1.getCostOfRace();
-    racePercentage = race1.getCharityPercentage();
-    raceSales = race1.getTotalRaceSales();
+    race_dist = race::race1.get_race_distance();
+    race_cost = race::race1.get_cost_of_race();
+    race_percentage = race::race1.get_charity_percentage();
+    race_sales = race::race1.get_total_race_sales();
 
     //Expecting those values to be true
-    EXPECT_EQ(raceDist, 25);
-    EXPECT_EQ(raceCost, 50.00);
-    EXPECT_EQ(racePercentage, 10.0);
-    EXPECT_EQ(raceSales, 500);
+    EXPECT_EQ(race_dist, 25);
+    EXPECT_EQ(race_cost, 50.00);
+    EXPECT_EQ(race_percentage, 10.0);
+    EXPECT_EQ(race_sales, 500);
 
 }
 
 TEST(RaceTest2, DefaultConstructor){
     
-    Race race2;
+    race::Race race2;
 
-    int raceDist2 = 0;
-    float raceCost2 = 0;
-    float racePercentage2 = 0;
-    float raceSales2 = 0;
+    int race_dist2 = 0;
+    float race_cost2 = 0;
+    float race_percentage2 = 0;
+    float race_sales2 = 0;
 
-    raceDist2 = 50;
-    raceCost2 = 100.00;
-    racePercentage2 = 15.00;
-    raceSales2 = 200.00;
+    race_dist2 = 50;
+    race_cost2 = 100.00;
+    race_percentage2 = 15.00;
+    race_sales2 = 200.00;
 
-    race2.setRaceDistance(raceDist2);
-    race2.setCostOfRace(raceCost2);
-    race2.setCharityPercentage(racePercentage2);
-    race2.setTotalRaceSales(raceSales2);
+    race::race2.set_race_distance(race_dist2);
+    race::race2.set_cost_of_race(race_cost2);
+    race::race2.set_charity_percentage(race_percentage2);
+    race::race2.set_total_race_sales(race_sales2);
 
     //Expects
-    EXPECT_EQ(race2.getRaceDistance(), 50);
-    EXPECT_EQ(race2.getCostOfRace(), 100.00);
-    EXPECT_EQ(race2.getCharityPercentage(), 15.00);
-    EXPECT_EQ(race2.getTotalRaceSales(), 200.00);
+    EXPECT_EQ(race::race2.get_race_distance(), 50);
+    EXPECT_EQ(race::race2.get_cost_of_race(), 100.00);
+    EXPECT_EQ(race::race2.get_charity_percentage(), 15.00);
+    EXPECT_EQ(race::race2.get_total_race_sales(), 200.00);
     
 }

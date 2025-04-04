@@ -6,7 +6,6 @@
 #include "validationFunctions/validateUserDecision.h"
 #include <string>
 #include <array>
-using namespace std;
 
 
 int main(){
@@ -22,45 +21,47 @@ int main(){
      */
     
     //Lets ask if the user is ready to create a Race
-    bool userDecision = false; //This varaible will be used to catch the return of validateString()
-    string fromUser; 
-    array <string, 6> arrYN= {"Y", "y", "N", "n", "Q", "q"}; 
+    bool user_decision = false; //This varaible will be used to catch the return of validateString()
+    std::string from_user; 
+    std::array <std::string, 6> arr_yn= {"Y", "y", "N", "n", "Q", "q"}; 
 
-    cout << "Ready to create a Race?" << endl;
-    cout << "(Y)es or (N)o, keep it to one character. Enter (Q) to quit " << endl;
+    std::cout << "Ready to create a Race?" << std::endl;
+    std::cout << "(Y)es or (N)o, keep it to one character. Enter (Q) to quit " << std::endl;
 
-    while(userDecision == false){
-        bool isStringSizeValid, yNCharValid = false;
-        cin >> fromUser;
+    while(user_decision == false){
+        bool is_string_size_valid, yn_char_valid = false;
+        std::cin >> from_user;
 
         //This ensures that the string size of Valid
         //We only one character within the user input
-        isStringSizeValid = checkingUserInput(fromUser);
+        is_string_size_valid = check_user_input::checking_user_input(from_user);
         
         //Now, if the size is valid then check if the character is yes, no, or quit.
-        if(isStringSizeValid == true){
-            yNCharValid = validateUserDecision(arrYN, fromUser); //Returns True or False
+        if(is_string_size_valid == true){
+            yn_char_valid = valid_user_decision::validate_user_decision(arr_yn, from_user); //Returns True or False
             //If the string is in the array
-            if(yNCharValid == true){
+            if(yn_char_valid == true){
                 //Also check if the string is a Q? If it is then Break out of the loop
-                if(fromUser == "Q" || fromUser == "q"){
-                    cout << "Thank you" << endl;
+                if(from_user == "Q" || from_user == "q"){
+                    std::cout << "Thank you" << std::endl;
                     break;
                 }
-                //Then the string is good and change the userDecision to True
+                //Then the string is good and change the user_decision to True
                 else{
-                    userDecision = true;
+                    user_decision = true;
                 }
             }
         }
         //This means that string size in not valid
         else{
-            cout << "Rerun the program and try again." << endl;
+            std::cout << "Rerun the program and try again." << std::endl;
             break;
         }
 
     }
     
+    //End of main
+    return 0;
 
         
 }

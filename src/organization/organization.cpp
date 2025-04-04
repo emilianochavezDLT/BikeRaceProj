@@ -1,34 +1,36 @@
 #include "organization/organization.h"
 #include <iostream>
-using namespace std;
 
-//Constructor
-Organization::Organization(std::string name, std::string desc){
-    organName = name;
-    description = desc;
-}
+namespace organization{
+    //Constructor
+    Organization::Organization(std::string name, std::string desc){
+        organ_name = name;
+        description = desc;
+    }
 
-//Another Constructor
-Organization::Organization(){}
+    //Another Constructor
+    Organization::Organization(){}
 
-//Destructor
-Organization::~Organization(){
-}
+    //Destructor
+    Organization::~Organization(){
+    }
 
-//Setter Functions and they are pretty self explanatory
-void Organization::setOrgranizationName(string name){
-    organName = name;
-}
+    //Setter Functions and they are pretty self explanatory
+    void Organization::set_organization_name(std::string name){
+        organ_name = name;
+    }
 
-void Organization::setDescription(string desc){
-    description = desc;
-}
+    void Organization::set_description(std::string desc){
+        description = desc;
+    }
 
-//Getter Functions and they are pretty self explanatory
-string Organization::getOrgranizationName(){
-    return organName;
-}
+    //Getter Functions and they are pretty self explanatory
+    std::string Organization::get_organization_name(){
+        return organ_name;
+    }
 
-string Organization::getDescription(){
-    return description;
+    std::string Organization::get_description(){
+        return description;
+    }
+
 }

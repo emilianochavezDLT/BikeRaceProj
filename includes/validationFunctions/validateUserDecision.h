@@ -1,9 +1,12 @@
-#ifndef VALIDATEUSERDECISION_H
-#define VALIDATEUSERDECISION_H
+#ifndef INCLUDES_VALIDATIONFUNCTION_VALIDATEUSERDECISION_H
+#define INCLUDES_VALIDATIONFUNCTION_VALIDATEUSERDECISION_H
 #include <iostream>
 #include <array>
 
-bool validateUserDecision(std::array <std::string, 6>& arrString, std::string userInput);
+namespace valid_user_decision{
+    bool validate_user_decision(std::array <std::string, 6>& arr_string, std::string user_input);
+}
+
 
 
 #endif

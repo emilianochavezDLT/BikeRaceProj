@@ -62,6 +62,7 @@ find_package(GTest REQUIRED)
 set(UNIT_TEST_SOURCES
     tests/unit/test_organization.cpp
     tests/unit/test_race.cpp
+    tests/unit/test_validationFunctions.cpp
 )
 
 #Creates a .exe file for our tests, so we can run them
