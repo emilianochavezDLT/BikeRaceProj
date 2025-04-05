@@ -6,6 +6,24 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 #---------------------#
+#   MongoDB Camke     #
+#---------------------#
+
+#Reminder that this is specifcally for using homebrew
+
+#For this MongoDB setup we are going force cmake to find out files by executing a command
+set(MONGO_DRIVER_PREFIX "/opt/homebrew")
+
+# Find packages 
+set(libmongocxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/mongocxx-4.0.0")
+set(libbsoncxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/bsoncxx-4.0.0")
+
+
+find_package(mongocxx REQUIRED)
+find_package(bsoncxx REQUIRED)
+
+
+#---------------------#
 # Basic Compile Setup #
 #---------------------#
 
@@ -39,10 +57,13 @@ add_executable(bikerace
 #Notice the name bikerace and how we the used the name bikerace_lib specifed on add_library.
 target_include_directories(bikerace_lib PUBLIC
     ${INCLUDE_DIR}
+    "${LIBMONGOCXX_INCLUDE_DIRS}/include/mongocxx/v_noabi"
+    "${LIBBSONCXX_INCLUDE_DIRS}/include/bsoncxx/v_noabi"
 )
 
+
 #This function links the main executable with libraires specifed above.
-target_link_libraries(bikerace PUBLIC bikerace_lib)
+target_link_libraries(bikerace PUBLIC bikerace_lib ${LIBMONGOCXX_LIBRARIES} ${LIBBSONCXX_LIBRARIES})
 
 
 #---------------------#
