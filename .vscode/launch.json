@@ -1,16 +1,32 @@
 {
     "configurations": [
     {
-        "name": "(lldb) Launch",
+        "name": "Debug Bike Race",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${workspaceFolder}/${fileBasenameNoExtension}",
+        "program": "${workspaceFolder}/build/bikerace",
         "args": [],
         "stopAtEntry": false,
-        "cwd": "${fileDirname}",
+        "cwd": "${workspaceFolder}/build",
         "environment": [],
         "externalConsole": true,
-        "MIMode": "lldb"
+        "MIMode": "lldb",
+        "preLaunchTask": "CMake: build"
+
+    },
+
+    {
+        "name": "Debug Unit Tests",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/runUnitTests", 
+            "args": [],
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "CMake: build"
+
     }
     ]
 }

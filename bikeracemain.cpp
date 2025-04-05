@@ -6,10 +6,15 @@
 #include "validationFunctions/validateUserDecision.h"
 #include <string>
 #include <array>
+#include <mongocxx/client.hpp>
+#include <mongocxx/instance.hpp>
+#include <bsoncxx/builder/stream/document.hpp>
+
 
 
 int main(){
 
+        
     /**
      * First we are going to start off by creating a Race Object
      * 
@@ -19,7 +24,6 @@ int main(){
      * Jerseys.
      * 
      */
-    
     //Lets ask if the user is ready to create a Race
     bool user_decision = false; //This varaible will be used to catch the return of validateString()
     std::string from_user; 

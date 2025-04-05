@@ -15,8 +15,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(MONGO_DRIVER_PREFIX "/opt/homebrew")
 
 # Find packages 
-set(libmongocxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/mongocxx-4.0.0")
-set(libbsoncxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/bsoncxx-4.0.0")
+set(mongocxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/mongocxx-4.0.0")
+set(bsoncxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/bsoncxx-4.0.0")
 
 
 find_package(mongocxx REQUIRED)
@@ -53,17 +53,17 @@ add_executable(bikerace
     bikeracemain.cpp
 )
 
+
 #This specifies the directories of my header files
 #Notice the name bikerace and how we the used the name bikerace_lib specifed on add_library.
 target_include_directories(bikerace_lib PUBLIC
     ${INCLUDE_DIR}
-    "${LIBMONGOCXX_INCLUDE_DIRS}/include/mongocxx/v_noabi"
-    "${LIBBSONCXX_INCLUDE_DIRS}/include/bsoncxx/v_noabi"
+    /opt/homebrew/include/mongocxx/v_noabi/
+    /opt/homebrew/include/bsoncxx/v_noabi/
 )
 
-
 #This function links the main executable with libraires specifed above.
-target_link_libraries(bikerace PUBLIC bikerace_lib ${LIBMONGOCXX_LIBRARIES} ${LIBBSONCXX_LIBRARIES})
+target_link_libraries(bikerace PUBLIC bikerace_lib ${BSONCXX_LIBRARIES} ${MONGOCXX_LIBRARIES})
 
 
 #---------------------#
