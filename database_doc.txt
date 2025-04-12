@@ -1,0 +1,4 @@
+To find out how to use C++ with MongoDB use the offical docs:
+    - https://www.mongodb.com/docs/languages/cpp/cpp-driver/current/connect/
+
+    
