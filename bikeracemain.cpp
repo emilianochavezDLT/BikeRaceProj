@@ -29,7 +29,9 @@ int main(){
     // Collection Setup
     // In this section we are accessing our collections or creating them if they don't exist
     auto race_collection = db["race_collection"];
-    auto organization = db["organ_collection"];
+    auto organization_collection = db["organ_collection"];
+    auto registrants_collection = db["registrants_collection"];
+
 
 
     /**

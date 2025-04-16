@@ -15,10 +15,12 @@ namespace organization{
             //Destructor
             ~Organization();
     
-            //Getters and Setters
+            //Setters
             void set_organization_name(std::string name);
-            std::string get_organization_name();
             void set_description(std::string desc);
+            
+            //Getters
+            std::string get_organization_name();
             std::string get_description(); 
     };
     
