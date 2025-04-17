@@ -49,7 +49,7 @@ int main(){
     std::array<std::string, 6> arr_yn = {"Y", "y", "N", "n", "Q", "q"};
 
     std::cout << "Ready to create a Race?" << std::endl;
-    std::cout << "(Y)es or (N)o, keep it to one character. Enter (Q) to quit " << std::endl;
+    std::cout << "(Y)es or (N)o, keep it to one character. Enter (Q) to quit: ";
 
     while (user_decision == false)
     {
