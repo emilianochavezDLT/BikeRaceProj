@@ -81,7 +81,7 @@ namespace organization_jersey_store{
         bool shirt_size_validation = false;
         while(shirt_size_validation == false){
             //Calling our private validation function
-            shirt_size_validation = validate_shirt_size(size);
+            shirt_size_validation = validate_shirt_size(size); //Validate shirt size determines if we break our wbile loop.
             
             //if the shirt size validation is true then size_of_jersey is = size
             if(shirt_size_validation == true){
