@@ -15,24 +15,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(MONGO_DRIVER_PREFIX "/opt/homebrew")
 
 # Find packages 
-#set(mongocxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/mongocxx-4.0.0")
-#set(bsoncxx_DIR "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/cmake/bsoncxx-4.0.0")
+
 set(MONGOCXX_LIB "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/libmongocxx.dylib")
 set(BSONCXX_LIB "${MONGO_DRIVER_PREFIX}/Cellar/mongo-cxx-driver/4.0.0/lib/libbsoncxx.dylib")
 set(MONGOCXX_INCLUDE_DIR "${MONGO_DRIVER_PREFIX}/include/mongocxx/v_noabi")
 set(BSONCXX_INCLUDE_DIR "${MONGO_DRIVER_PREFIX}/include/bsoncxx/v_noabi")
 
-#find_package(mongocxx REQUIRED)
-#find_package(bsoncxx REQUIRED)
 
 message(STATUS "MONGOCXX_LIB_FOUND ${MONGOCXX_LIB}")
 message(STATUS "BSONCXX_LIB_FOUND ${BSONCXX_LIB}")
-message(STATUS "MONGOCXX_FOUND: ${MONGOCXX_FOUND}")
-message(STATUS "BSONCXX_FOUND: ${BSONCXX_FOUND}")
-message(STATUS "MONGOCXX_LIBRARIES: ${MONGOCXX_LIBRARIES}")
-message(STATUS "BSONCXX_LIBRARIES: ${BSONCXX_LIBRARIES}")
-message(STATUS "MONGOCXX_INCLUDE_DIRS: ${MONGOCXX_INCLUDE_DIR}")
-message(STATUS "BSONCXX_INCLUDE_DIRS: ${BSONCXX_INCLUDE_DIR}")
+message(STATUS "MONGOCXX_INCLUDE_DIR: ${MONGOCXX_INCLUDE_DIR}")
+message(STATUS "BSONCXX_INCLUDE_DIR: ${BSONCXX_INCLUDE_DIR}")
 
 
 #---------------------#
@@ -71,8 +64,6 @@ add_executable(bikerace
 #Notice the name bikerace and how we the used the name bikerace_lib specifed on add_library.
 target_include_directories(bikerace_lib PUBLIC
     ${INCLUDE_DIR}
-    #/opt/homebrew/include/mongocxx/v_noabi/
-    #/opt/homebrew/include/bsoncxx/v_noabi/
     ${MONGOCXX_INCLUDE_DIR}
     ${BSONCXX_INCLUDE_DIR}
 )

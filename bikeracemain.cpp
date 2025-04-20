@@ -1,6 +1,7 @@
 // Program Created by: Emiliano Chavez De La Torre
 #include <iostream>
 #include "organization/organization.h"
+#include "organization/jersey_store.h"
 #include "race/race.h"
 #include "validationFunctions/checkingUserInput.h"
 #include "validationFunctions/validateUserDecision.h"
